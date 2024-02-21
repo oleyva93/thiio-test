@@ -10,6 +10,11 @@ import ability from "./services/ability";
 import vSelect from "vue-select";
 import useAuth from "./composables/auth";
 import i18n from "./plugins/i18n";
+// Vuetify
+import "vuetify/styles";
+import { createVuetify } from "vuetify";
+import * as components from "vuetify/components";
+import * as directives from "vuetify/directives";
 
 import "sweetalert2/dist/sweetalert2.min.css";
 import "vue-select/dist/vue-select.css";
@@ -20,6 +25,12 @@ const app = createApp({
     },
 });
 
+const vuetify = createVuetify({
+    components,
+    directives,
+});
+
+app.use(vuetify);
 app.use(router);
 app.use(store);
 app.use(VueSweetalert2);

@@ -8,8 +8,8 @@
                             <div class="">
                                 <!-- Email -->
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">{{ $t('email') }}</label>
-                                    <input v-model="loginForm.email" id="email" type="email" class="form-control" required autofocus autocomplete="username">
+                                    <v-text-field autofocus autocomplete="username" v-model="loginForm.email"
+                                        :rules="emailRules" :label="$t('email')" required></v-text-field>
                                     <!-- Validation Errors -->
                                     <div class="text-danger mt-1">
                                         <div v-for="message in validationErrors?.email">
@@ -19,10 +19,8 @@
                                 </div>
                                 <!-- Password -->
                                 <div class="mb-4">
-                                    <label for="password" class="form-label">
-                                        {{ $t('password') }}
-                                    </label>
-                                    <input v-model="loginForm.password" id="password" type="password" class="form-control" required autocomplete="current-password">
+                                    <v-text-field v-model="loginForm.password" label="Password" type="password"
+                                        autocomplete="current-password" required hide-details></v-text-field>
                                     <!-- Validation Errors -->
                                     <div class="text-danger-600 mt-1">
                                         <div v-for="message in validationErrors?.password">
@@ -32,7 +30,8 @@
                                 </div>
                                 <!-- Remember me -->
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" v-model="loginForm.remember" id="flexCheckIndeterminate">
+                                    <input class="form-check-input" type="checkbox" name="remember"
+                                        v-model="loginForm.remember" id="flexCheckIndeterminate">
                                     <label class="form-check-label" for="flexCheckIndeterminate">
                                         {{ $t('remember_me') }}
                                     </label>
@@ -40,12 +39,13 @@
 
                                 <!-- Buttons -->
                                 <div class="flex items-center justify-end mt-4">
-                                    <button class="btn btn-primary" :class="{ 'opacity-25': processing }" :disabled="processing">
+                                    <button class="btn btn-primary" :class="{ 'opacity-25': processing }"
+                                        :disabled="processing">
                                         {{ $t('login') }}
                                     </button>
                                 </div>
                             </div>
-                            <router-link :to="{name: 'auth.forgot-password'}">{{ $t('forgot_password')}}</router-link>
+                            <router-link :to="{ name: 'auth.forgot-password' }">{{ $t('forgot_password') }}</router-link>
                         </form>
                     </div>
                 </div>
