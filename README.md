@@ -91,6 +91,13 @@ npm run dev or yarn dev
 npm run build or yarn build
 ```
 
+#### Run Tests
+
+```bash
+cp phpunit.dist.xml phpunit.xml
+./vendor/bin/phpunit
+```
+
 ## Email Verification
 
 To enable email verification make sure that your `App\User` model implements the `Illuminate\Contracts\Auth\MustVerifyEmail` contract.
