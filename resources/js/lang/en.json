@@ -1,5 +1,6 @@
 {
     "welcome_starter_title": "Welcome to Laravel Vue 3 Boilerplate",
+    "forgot_password_t": "Forgot password",
     "ok": "Ok",
     "cancel": "Cancel",
     "error_alert_title": "Oops...",

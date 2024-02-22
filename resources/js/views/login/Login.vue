@@ -1,57 +1,65 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center my-5">
-            <div class="col-md-6">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                        <form @submit.prevent="submitLogin">
-                            <div class="">
-                                <!-- Email -->
-                                <div class="mb-3">
-                                    <v-text-field autofocus autocomplete="username" v-model="loginForm.email"
-                                        :rules="emailRules" :label="$t('email')" required></v-text-field>
-                                    <!-- Validation Errors -->
-                                    <div class="text-danger mt-1">
-                                        <div v-for="message in validationErrors?.email">
-                                            {{ message }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Password -->
-                                <div class="mb-4">
-                                    <v-text-field v-model="loginForm.password" label="Password" type="password"
-                                        autocomplete="current-password" required hide-details></v-text-field>
-                                    <!-- Validation Errors -->
-                                    <div class="text-danger-600 mt-1">
-                                        <div v-for="message in validationErrors?.password">
-                                            {{ message }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Remember me -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember"
-                                        v-model="loginForm.remember" id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        {{ $t('remember_me') }}
-                                    </label>
-                                </div>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
 
-                                <!-- Buttons -->
-                                <div class="flex items-center justify-end mt-4">
-                                    <button class="btn btn-primary" :class="{ 'opacity-25': processing }"
+                            <div class="mb-md-5 mt-md-4 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase">Thiio Login</h2>
+                                <p class="mb-5">Please enter your login and password!</p>
+                                <form @submit.prevent="submitLogin">
+                                    <div class="form-outline mb-4">
+                                        <v-text-field autofocus autocomplete="username" v-model="loginForm.email"
+                                            :rules="emailRules" :label="$t('email')" required></v-text-field>
+                                        <div class="text-danger mt-1">
+                                            <div v-for="message in validationErrors?.email">
+                                                {{ message }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline  mb-4">
+                                        <v-text-field v-model="loginForm.password" label="Password" type="password"
+                                            autocomplete="current-password" required hide-details></v-text-field>
+                                        <!-- Validation Errors -->
+                                        <div class="text-danger-600 mt-1">
+                                            <div v-for="message in validationErrors?.password">
+                                                {{ message }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="small mb-5 pb-lg-2">
+                                        <router-link :to="{ name: 'auth.forgot-password' }">{{
+                                            $t('forgot_password')
+                                        }}</router-link>
+                                    </p>
+
+
+                                    <button class="btn btn-primary btn-lg px-5" :class="{ 'opacity-25': processing }"
                                         :disabled="processing">
                                         {{ $t('login') }}
                                     </button>
-                                </div>
+
+                                </form>
+
                             </div>
-                            <router-link :to="{ name: 'auth.forgot-password' }">{{ $t('forgot_password') }}</router-link>
-                        </form>
+
+                            <div>
+                                <p class="mb-0">Don't have an account? <router-link class="btn-primary" to="/register">{{
+                                    $t('register') }}</router-link>
+                                </p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup>
@@ -61,3 +69,11 @@ import useAuth from '@/composables/auth'
 const { loginForm, validationErrors, processing, submitLogin } = useAuth();
 
 </script>
+
+
+
+
+
+
+
+

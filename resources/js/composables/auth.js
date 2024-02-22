@@ -17,8 +17,8 @@ export default function useAuth() {
     const ability = inject(ABILITY_TOKEN);
 
     const loginForm = reactive({
-        email: "",
-        password: "",
+        email: "admin@demo.com",
+        password: "12345678",
         remember: false,
     });
 

@@ -1,6 +1,6 @@
-## Laravel Vue.js 3 SPA Starter Boilerplate
+## Thiio Test
 
-A simple and clean boilerplate to start a new SPA project with authentication, user, roles, permissions management and more features. This boilerplate uses the following tools:
+A simple and clean SPA project with authentication, user, roles and permissions management. This site uses the following tools:
 
 [![](https://img.shields.io/badge/vue.js-v3.3-04C690.svg)](https://vuejs.org)
 [![](https://img.shields.io/badge/Laravel-v10.26.2-ff2e21.svg)](https://laravel.com)
@@ -13,6 +13,7 @@ A simple and clean boilerplate to start a new SPA project with authentication, u
 - [Vue 3](https://github.com/vuejs/vue)
 - [Vue Router](https://router.vuejs.org/)
 - [Vuex](https://vuex.vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Vue I18n](https://vue-i18n.intlify.dev)
 - [Laravel Request Docs](https://github.com/rakutentech/laravel-request-docs)
@@ -25,8 +26,7 @@ The following Sanctum features are implemented in this Vue SPA:
 
 - ✅ Laravel 10
 - ✅ Vue 3
-- ✅ VueRouter + Vuex
-- ✅ Vue I18n Multi Language
+- ✅ VueRouter + Vuex + Vuetify
 - ✅ Login
 - ✅ Password Reset
 - ✅ Registration
@@ -37,16 +37,12 @@ The following Sanctum features are implemented in this Vue SPA:
 - ✅ Permissions Management
 - ✅ Password Change
 - ✅ E-Mail Verification
-- ✅ Posts Management
-- ✅ Frontend Blog
-- ✅ Bootstrap 5
-- ✅ Automatic Api Documentation  -- route  /api-docs
 
 ## How To Use
 #### Clone the repository
 
 ```bash
-git clone https://github.com/irabbi360/laravel-vue3-spa-starter.git
+git clone https://github.com/oleyva93/thiio-test.git
 ```
 
 #### Copy .env.example file to .env and edit credentials also set app url
@@ -80,8 +76,16 @@ php artisan db:seed
 ```bash
 npm install or yarn install
 
+```
+
+#### Run App
+
+```bash
+php artisan serve
+
 npm run dev or yarn dev
 ```
+
 #### Production
 
 ```bash

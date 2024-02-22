@@ -20,7 +20,7 @@ function guest(to, from, next) {
     isLogin = !!store.state.auth.authenticated;
 
     if (isLogin) {
-        next("/");
+        next("/admin");
     } else {
         next();
     }
@@ -30,9 +30,10 @@ export default [
     {
         path: "/",
         component: GuestLayout,
+        beforeEnter: guest,
         children: [
             {
-                path: "/",
+                path: "/login",
                 name: "auth.login",
                 component: () => import("../views/login/Login.vue"),
                 beforeEnter: guest,
@@ -65,7 +66,7 @@ export default [
             {
                 name: "admin.index",
                 path: "",
-                component: () => import("../views/admin/index.vue"),
+                component: () => import("../views/admin/users/Index.vue"),
                 meta: { breadCrumb: "Admin" },
             },
             {
