@@ -90,6 +90,8 @@ npm run dev or yarn dev
 - user: admin@demo.com
 - password: 12345678
 
+APP_URL: http://127.0.0.1:8000
+
 #### Production
 
 ```bash
