@@ -22,6 +22,9 @@ function guest(to, from, next) {
     if (isLogin) {
         next("/admin");
     } else {
+        if (to.path === "/") {
+            next("/login");
+        }
         next();
     }
 }
