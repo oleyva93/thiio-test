@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <div class="card border-0 shadow-sm">
                     <div class="d-flex align-items-center card-header bg-transparent" style="gap: 5px">
-                        <router-link class="btn-primary" to="/">
+                        <router-link class="btn-primary" to="/login">
                             <ArrowBack />
                         </router-link>
                         <h4 class="m-0">

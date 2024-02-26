@@ -85,6 +85,11 @@ php artisan serve
 npm run dev or yarn dev
 ```
 
+#### Login Credentials
+
+- user: admin@demo.com
+- password: 12345678
+
 #### Production
 
 ```bash
